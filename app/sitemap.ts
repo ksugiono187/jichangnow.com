@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { siteConfig } from '../data/site';
 import { getPostSlugs } from '../lib/content';
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/airports', '/blog', '/compare', '/topics', '/faq', '/about', '/privacy', '/disclaimer'].map((route) => ({
     url: `${siteConfig.url}${route}`,

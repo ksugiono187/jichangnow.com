@@ -7,7 +7,7 @@ export function ShareButton({ title, text, url }: { title: string; text: string;
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    if (typeof navigator !== "undefined" && navigator.share) {
+    if (typeof navigator !== "undefined" && 'share' in navigator) {
       setCanShare(true);
     }
   }, []);
